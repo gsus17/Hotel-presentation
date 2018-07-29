@@ -3,6 +3,7 @@
   border-radius: 1px;
   box-shadow: 3px 3px 4pc #ccc;
   margin: 5px;
+  padding: 10px;
 }
 
 .data-card {
@@ -56,7 +57,7 @@
 }
 
 .hotel-select-button:hover {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .hotel-price {
@@ -69,4 +70,15 @@
   color: #ff8300;
   font-size: 25px;
   padding-right: 5px;
+}
+@media (max-width: 599px) {
+  .card-container {
+    display: initial !important;
+    padding: 16px;
+  }
+}
+@media (min-width: 600px) and ( max-width: 5000px) {
+  .card-container {
+    display: flex !important;
+  }
 }

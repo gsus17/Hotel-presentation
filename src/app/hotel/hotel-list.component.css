@@ -8,11 +8,6 @@ section {
   padding: 20px;
 }
 
-.list-container {
-  border-color: red;
-  border: solid;
-}
-
 .filter-container {
   margin: 16px;
 }
@@ -27,4 +22,12 @@ section {
 .not-result {
   font-size: 25px;
   font-weight: bold;
+}
+
+
+@media (max-width: 599px) {
+  .list-container {
+    display: initial !important;
+    padding: 16px;
+  }
 }

@@ -1,10 +1,10 @@
-<div fxLayout="column">
+<div fxLayout="column" fxFlex>
   <header fxLayout="row" fxFlex fxLayoutAlign="start center">
     <img src="../assets/images/logo/logo-almundo.svg" alt="">
   </header>
 
   <section fxLayout="column">
-    <div fxLayout="row">
+    <div fxLayout="row" fxLayoutAlign="space-between start" fxLayout.xs="column" fxLayoutAlign.xs="start center">
 
       <div class="filter-container" fxLayout="row" fxFlex fxLayoutAlign="start start" fxFlex="20">
         <app-hotel-filter fxFlex (filterHotelEmitter)="filterHotels($event)"></app-hotel-filter>
@@ -14,9 +14,9 @@
           <span class="not-result">No se encontraron resultados</span>
         </div>
       </ng-container>
-      <ng-container *ngIf="hasHotelList() ">
-        <div class="list-container " fxLayout="column " class="card-prueba " fxFlex>
-          <app-hotel-card fxLayout="row " *ngFor="let hotel of hoteles " [hotel]="hotel " (selectHotelEmitter)="selectHotel($event) "></app-hotel-card>
+      <ng-container *ngIf="hasHotelList()">
+        <div fxLayout="column" class="list-container card-prueba" fxFlex.lg="75">
+          <app-hotel-card fxLayout="row" fxLayout.xs="column" *ngFor="let hotel of hoteles " [hotel]="hotel " (selectHotelEmitter)="selectHotel($event) "></app-hotel-card>
         </div>
       </ng-container>
     </div>

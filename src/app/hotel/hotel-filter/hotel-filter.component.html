@@ -9,7 +9,7 @@
       <span class="filter-hotel-label">Nombre del hotel</span>
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between center">
-      <input type="text" placeholder="Ingrese el nombre del hotel" [(ngModel)]="model.searchLabel" name="searchLabel">
+      <input type="text" placeholder="Ingrese el nombre del hotel" [(ngModel)]="model.searchLabel" name="searchLabel" fxFlex="60">
       <button class="hotel-select-filter-button" (click)="searchHotel()">Aceptar</button>
     </div>
   </div>

@@ -1,11 +1,11 @@
-<div fxLayout="row" class="card" fxFlex>
-  <div fxLayout="row" fxLayoutAlign="start start">
+<div fxLayout="row" class="card" fxFlex fxLayout.xs="column" class="card-container">
+  <div fxLayout="row"  fxLayout.xs="column" fxLayoutAlign="start start">
     <div fxLayout="column" fxLayoutAlign="center start">
       <img class="hotel-img" src="../assets/images/hotels/{{hotel.image}}" alt="">
     </div>
   </div>
 
-  <div fxLayout="column" fxLayoutAlign="start start" class="data-card" fxFlex>
+  <div fxLayout="column" fxLayoutAlign="start start" class="data-card" fxFlex fxLayout.xs="column">
     <div class="hotel-name" fxLayout="row" fxLayoutAlign="start center">{{hotel.name}}</div>
     <div fxLayout="row" fxLayoutAlign="start center" class="hotel-star">
       <img fxLayout="row" fxLayoutAlign="start center" *ngFor="let stars of getArrayStars()" class="hotel-amenities-icon" src="../../../assets/icons/star.svg">
@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <div fxFlex="20" fxLayout="row" fxLayoutAlign="end center" fxFlex>
+  <div fxFlex="20" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="end center" fxFlex fxLayoutAlign.xs="center center">
     <div fxLayout="column" fxLayoutAlign="center center">
 
       <span class="hotel-caption"> Precio por noche por habitacion</span>
