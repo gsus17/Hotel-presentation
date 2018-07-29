@@ -1,0 +1,17 @@
+<div fxLayout="column">
+  <header fxLayout="row" fxFlex fxLayoutAlign="start center">
+    <img src="../assets/images/logo/logo-almundo.svg" alt="">
+  </header>
+
+  <section fxLayout="column">
+    <div fxLayout="row">
+
+      <div class="filter-container" fxLayout="row" fxFlex fxLayoutAlign="start start" fxFlex="30">
+        <app-hotel-filter fxFlex></app-hotel-filter>
+      </div>
+      <div class="list-container" fxLayout="column" class="card-prueba" fxFlex>
+        <app-hotel-card fxLayout="row" *ngFor="let hotel of hoteles" [hotel]="hotel"></app-hotel-card>
+      </div>
+    </div>
+  </section>
+</div>
