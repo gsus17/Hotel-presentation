@@ -1,0 +1,68 @@
+.card-container {
+  background-color: white;
+  border-radius: 1px;
+  box-shadow: 3px 3px 4pc #ccc;
+  margin: 5px;
+}
+
+.data-card {
+  padding-left: 15px;
+}
+
+.hotel-img {
+  max-height: 150px;
+}
+
+.card {
+  padding: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+  margin: 16px;
+  background-color: white;
+}
+
+.hotel-amenities-icon {
+  max-width: 25px;
+  padding-right: 8px;
+}
+
+.hotel-name {
+  color: #229af8;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.hotel-amenities {
+  padding-bottom: 5px;
+}
+
+.hotel-star {
+  padding-bottom: 10px;
+}
+
+.hotel-caption {
+  font-size: 12px;
+}
+
+.hotel-select-button {
+  background-color: #030380;
+  color: white;
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.hotel-price {
+  color: #ff8300;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.hotel-currency-price {
+  color: #ff8300;
+  font-size: 25px;
+  padding-right: 5px;
+}
