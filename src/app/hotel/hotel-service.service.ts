@@ -96,9 +96,43 @@ export class HotelServiceService {
 
   constructor() { }
 
+  /**
+   * Return all hotels.s
+   * @returns {Hotel[]}
+   * @memberof HotelServiceService
+   */
   public getAllHotel(): Hotel[] {
     console.log(`${HotelServiceService.name}::getAllHotel`);
 
     return this.hoteles;
+  }
+
+  /**
+   * Return hotel filtered list.
+   * @param {string} query
+   * @param {string[]} stars
+   * @returns {Hotel[]}
+   * @memberof HotelServiceService
+   */
+  public filterHotels(query: string, stars: string[]): Hotel[] {
+    console.log(`${HotelServiceService.name}::filterHotels query %o`, query);
+    const starsNumber: number[] = [];
+    stars.forEach((item: string) => {
+
+      if (item === 'Todas las estrellas') {
+        item = '0';
+      }
+      // tslint:disable-next-line:radix
+      const starNumber = parseInt(item);
+      starsNumber.push(starNumber);
+    });
+
+    const filteredList: Hotel[] = this.hoteles.filter(
+      (hotel) => hotel.name.toLocaleLowerCase().indexOf(
+        query.toLocaleLowerCase()) > -1 && starsNumber.indexOf(0) > -1
+        || hotel.name.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) > -1 && starsNumber.indexOf(hotel.stars) > -1);
+    console.log(`${HotelServiceService.name}::filterHotels filteredList %o`, filteredList);
+
+    return filteredList;
   }
 }

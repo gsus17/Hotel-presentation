@@ -41,7 +41,16 @@ export class HotelListComponent implements OnInit {
   public filterHotels(filter: FilterModel): void {
     console.log(`${HotelListComponent.name}::filterHotels filter %o`, filter);
     const starsSelected: string[] = this.getStarsSelected(filter);
+    this.hoteles = this.hotelServiceService.filterHotels(filter.searchLabel, starsSelected);
+  }
 
+  /**
+   * Return true if hotel list has values.
+   * @returns {boolean}
+   * @memberof HotelListComponent
+   */
+  public hasHotelList(): boolean {
+    return this.hoteles.length > 0;
   }
 
   /**
