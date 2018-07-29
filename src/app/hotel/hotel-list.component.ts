@@ -17,7 +17,10 @@ export class HotelListComponent implements OnInit {
    */
   public hoteles: Hotel[] = [];
 
-  constructor(private hotelServiceService: HotelServiceService) { }
+  constructor(private hotelServiceService: HotelServiceService) {
+    console.log(`${HotelListComponent.name}::ctrl`);
+
+   }
 
   ngOnInit() {
     this.hoteles = this.hotelServiceService.getAllHotel();

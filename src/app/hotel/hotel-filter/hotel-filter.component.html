@@ -19,7 +19,6 @@
       <span class="filter-stats-label">Estrellas</span>
     </div>
 
-
     <div fxLayout="row" fxLayoutAlign="start center" *ngFor="let option of model.starOptions">
       <input type="checkbox" name="option.name" value="{{option.value}}" [(ngModel)]="option.checked" />
       <ng-container *ngIf="showStar(option.value)">

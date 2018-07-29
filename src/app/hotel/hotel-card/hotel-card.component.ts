@@ -8,7 +8,6 @@ import { Hotel } from '../hotel.entity';
 })
 export class HotelCardComponent implements OnInit {
 
-
   /**
    * Hotel.
    * @type {Hotel}
@@ -23,6 +22,8 @@ export class HotelCardComponent implements OnInit {
   @Output() selectHotelEmitter = new EventEmitter<Hotel>();
 
   constructor() {
+    console.log(`${HotelCardComponent.name}::ctrl`);
+
   }
 
   ngOnInit() {

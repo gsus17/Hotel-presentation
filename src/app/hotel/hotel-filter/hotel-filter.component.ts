@@ -21,7 +21,10 @@ export class HotelFilterComponent implements OnInit {
    */
   public model: FilterModel;
 
-  constructor() { }
+  constructor() {
+    console.log(`${HotelFilterComponent.name}::ctrl`);
+
+   }
 
   ngOnInit() {
 

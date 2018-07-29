@@ -1446,7 +1446,6 @@ export class HotelServiceService {
       (hotel) => hotel.name.toLocaleLowerCase().indexOf(
         query.toLocaleLowerCase()) > -1 && starsNumber.indexOf(0) > -1
         || hotel.name.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) > -1 && starsNumber.indexOf(hotel.stars) > -1);
-    console.log(`${HotelServiceService.name}::filterHotels filteredList %o`, filteredList);
 
     return filteredList;
   }
