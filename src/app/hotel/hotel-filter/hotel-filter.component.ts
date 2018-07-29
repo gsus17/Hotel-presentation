@@ -8,7 +8,11 @@ import { FilterModel } from './hotel-filtel.model';
 })
 export class HotelFilterComponent implements OnInit {
 
-  @Output() selectHotelEmitter = new EventEmitter<FilterModel>();
+  /**
+   * Emit filter hotel event.
+   * @memberof HotelFilterComponent
+   */
+  @Output() filterHotelEmitter = new EventEmitter<FilterModel>();
 
   /**
    * Filter model.
@@ -41,7 +45,7 @@ export class HotelFilterComponent implements OnInit {
    */
   public searchHotel(): void {
     console.log(`${HotelFilterComponent.name}::searchHotel model %o`, this.model);
-    this.selectHotelEmitter.emit(this.model);
+    this.filterHotelEmitter.emit(this.model);
 
   }
 

@@ -7,10 +7,10 @@
     <div fxLayout="row">
 
       <div class="filter-container" fxLayout="row" fxFlex fxLayoutAlign="start start" fxFlex="20">
-        <app-hotel-filter fxFlex (selectHotelEmitter)="filterHotels($event)"></app-hotel-filter>
+        <app-hotel-filter fxFlex (filterHotelEmitter)="filterHotels($event)"></app-hotel-filter>
       </div>
       <div class="list-container" fxLayout="column" class="card-prueba" fxFlex>
-        <app-hotel-card fxLayout="row" *ngFor="let hotel of hoteles" [hotel]="hotel"></app-hotel-card>
+        <app-hotel-card fxLayout="row" *ngFor="let hotel of hoteles" [hotel]="hotel" (selectHotelEmitter)="selectHotel($event)"></app-hotel-card>
       </div>
     </div>
   </section>

@@ -5,7 +5,6 @@
     </div>
   </div>
 
-  <!-- <div fxLayout="row" fxFlex class="data-card" fxLayoutAlign="start center"> -->
   <div fxLayout="column" fxLayoutAlign="start start" class="data-card" fxFlex>
     <div class="hotel-name" fxLayout="row" fxLayoutAlign="start center">{{hotel.name}}</div>
     <div fxLayout="row" fxLayoutAlign="start center" class="hotel-star">
@@ -16,9 +15,7 @@
       <img fxLayout="row" fxLayoutAlign="start center" *ngFor="let amanities of hotel.amenities" class="hotel-amenities-icon" src="../../../assets/icons/amenities/{{amanities}}.svg">
     </div>
   </div>
-  <!-- </div> -->
 
-  <!-- <div fxLayout="row" fxFlex="20" fxLayoutAlign="end center"> -->
   <div fxFlex="20" fxLayout="row" fxLayoutAlign="end center" fxFlex>
     <div fxLayout="column" fxLayoutAlign="center center">
 
@@ -27,7 +24,7 @@
         <span class="hotel-currency-price">ARS </span>
         <span class="hotel-price"> {{hotel.price}}</span>
       </div>
-      <button class="hotel-select-button">Ver Hotel</button>
+      <button class="hotel-select-button" (click)="selectHotel(hotel)">Ver Hotel</button>
 
     </div>
   </div>

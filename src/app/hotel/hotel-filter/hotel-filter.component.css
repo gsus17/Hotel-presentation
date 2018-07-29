@@ -43,3 +43,7 @@
   font-weight: bold;
   font-size: 18px;
 }
+
+.hotel-select-filter-button:hover {
+  cursor: pointer
+}

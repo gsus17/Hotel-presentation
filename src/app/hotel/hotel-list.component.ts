@@ -24,11 +24,21 @@ export class HotelListComponent implements OnInit {
   }
 
   /**
+   * Get selected hotel.
+   * @param {Hotel} hotel
+   * @memberof HotelListComponent
+   */
+  public selectHotel(hotel: Hotel): void {
+    console.log(`${HotelListComponent.name}::selectHotel hotel %o`, hotel);
+
+  }
+
+  /**
    * Filter hotel list.
    * @param {FilterModel} filter
    * @memberof HotelListComponent
    */
-  public filterHotels(filter: FilterModel) {
+  public filterHotels(filter: FilterModel): void {
     console.log(`${HotelListComponent.name}::filterHotels filter %o`, filter);
     const starsSelected: string[] = this.getStarsSelected(filter);
 

@@ -55,6 +55,10 @@
   font-size: 18px;
 }
 
+.hotel-select-button:hover {
+  cursor: pointer
+}
+
 .hotel-price {
   color: #ff8300;
   font-size: 40px;

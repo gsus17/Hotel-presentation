@@ -9,8 +9,17 @@ import { Hotel } from '../hotel.entity';
 export class HotelCardComponent implements OnInit {
 
 
+  /**
+   * Hotel.
+   * @type {Hotel}
+   * @memberof HotelCardComponent
+   */
   @Input() public hotel: Hotel;
 
+  /**
+   * Emit selection hotel event.
+   * @memberof HotelCardComponent
+   */
   @Output() selectHotelEmitter = new EventEmitter<Hotel>();
 
   constructor() {
@@ -19,11 +28,21 @@ export class HotelCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Emit selection hotel event.
+   * @param {Hotel} hotel
+   * @memberof HotelCardComponent
+   */
   public selectHotel(hotel: Hotel) {
     console.log(`${HotelCardComponent.name}::selectHotel`);
     this.selectHotelEmitter.emit(hotel);
   }
 
+  /**
+   * Return stars list.
+   * @returns {number[]}
+   * @memberof HotelCardComponent
+   */
   public getArrayStars(): number[] {
     return new Array(this.hotel.stars);
   }
