@@ -6,7 +6,6 @@ import { HotelModule } from './hotel/hotel.module';
 import { appRoutes } from './app-routes-config';
 import { RouterModule } from '@angular/router';
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +14,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     FlexLayoutModule,
     HotelModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

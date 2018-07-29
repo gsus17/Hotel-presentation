@@ -1,0 +1,45 @@
+.card-container {
+  background-color: white;
+  margin-bottom: 8px;
+}
+
+.card-filter {
+  padding: 10px;
+  box-shadow: 1 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+  margin: 2px;
+  background-color: white;
+}
+
+.filter-title {
+  font-weight: bold;
+}
+
+.search-filter-icon,
+.star-filter-icon {
+  max-width: 25px;
+  padding-right: 8px;
+  height: 20px;
+}
+
+.selection-stars {
+  padding-bottom: 10px;
+}
+
+.filter-hotel-label,
+.filter-stats-label {
+  color: #229af8;
+  font-size: 15px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.hotel-select-filter-button {
+  background-color: #030380;
+  color: white;
+  border-radius: 3px;
+  height: 27px;
+  width: 80px;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+}

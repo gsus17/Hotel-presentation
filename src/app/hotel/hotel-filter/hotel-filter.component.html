@@ -1,0 +1,36 @@
+<form fxLayout="column" fxFlex>
+  <div fxLayout="row" fxLayoutAlign="start center" class="card-filter" fxFlex>
+    <span fxFlex class="filter-title">Filtros</span>
+  </div>
+  <div fxLayout="column" class="card-filter">
+    <div fxLayout="row">
+      <img fxLayout="row" fxFlex="10" fxLayoutAlign="start start" class="search-filter-icon" src="../../../assets/icons/search.svg">
+
+      <span class="filter-hotel-label">Nombre del hotel</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <input type="text" placeholder="Ingrese el nombre del hotel" [(ngModel)]="model.searchLabel" name="searchLabel">
+      <button class="hotel-select-filter-button" (click)="searchHotel()">Aceptar</button>
+    </div>
+  </div>
+  <div fxLayout="column" class="card-filter">
+    <div fxLayout="row" class="selection-stars">
+      <img fxLayout="row" fxFlex="10" fxLayoutAlign="start start" class="star-filter-icon" src="../../../assets/icons/star.svg">
+      <span class="filter-stats-label">Estrellas</span>
+    </div>
+
+
+    <div fxLayout="row" fxLayoutAlign="start center" *ngFor="let option of model.starOptions">
+      <input type="checkbox" name="option.name" value="{{option.value}}" [(ngModel)]="option.checked" />
+      <ng-container *ngIf="showStar(option.value)">
+        <img fxLayout="row" fxFlex="5" fxLayoutAlign="start center" *ngFor="let star of getStar(option.value)" class="hotel-amenities-icon"
+          src="../../../assets/icons/star.svg">
+      </ng-container>
+
+      <ng-container *ngIf="!showStar(option.value)">
+        <span>{{option.value}}</span>
+      </ng-container>
+    </div>
+
+  </div>
+</form>
