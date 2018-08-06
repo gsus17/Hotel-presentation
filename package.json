@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently -r \"npm run start:server\" \"npm run start:client\" ",
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
