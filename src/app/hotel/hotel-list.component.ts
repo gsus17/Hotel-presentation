@@ -39,7 +39,6 @@ export class HotelListComponent implements OnInit {
    */
   public selectHotel(hotel: Hotel): void {
     console.log(`${HotelListComponent.name}::selectHotel hotel %o`, hotel);
-
   }
 
   /**
@@ -50,7 +49,10 @@ export class HotelListComponent implements OnInit {
   public filterHotels(filter: FilterModel): void {
     console.log(`${HotelListComponent.name}::filterHotels filter %o`, filter);
     const starsSelected: string[] = this.getStarsSelected(filter);
-    this.hoteles = this.hotelServiceService.filterHotels(filter.searchLabel, starsSelected);
+    this.hotelServiceService.filterHotels(filter.searchLabel, starsSelected)
+      .then((hotels: Hotel[]) => {
+        this.hoteles = hotels;
+      });
   }
 
   /**
@@ -74,5 +76,4 @@ export class HotelListComponent implements OnInit {
       .filter(opt => opt.checked)
       .map(opt => opt.value);
   }
-
 }

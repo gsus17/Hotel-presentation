@@ -7,8 +7,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HotelServiceService {
 
-  private hoteles: Hotel[] = [];
-
+  /**
+   * Api url request.
+   * @private
+   * @type {string}
+   * @memberof HotelServiceService
+   */
   private hotelUrl: string;
 
   constructor(private httpClient: HttpClient) {
@@ -37,7 +41,7 @@ export class HotelServiceService {
    * @returns {Hotel[]}
    * @memberof HotelServiceService
    */
-  public filterHotels(query: string, stars: string[]): Hotel[] {
+  public filterHotels(query: string, stars: string[]): Promise<void | Hotel[]> {
     console.log(`${HotelServiceService.name}::filterHotels query %o`, query);
     const starsNumber: number[] = [];
     stars.forEach((item: string) => {
@@ -50,11 +54,12 @@ export class HotelServiceService {
       starsNumber.push(starNumber);
     });
 
-    const filteredList: Hotel[] = this.hoteles.filter(
-      (hotel) => hotel.name.toLocaleLowerCase().indexOf(
-        query.toLocaleLowerCase()) > -1 && starsNumber.indexOf(0) > -1
-        || hotel.name.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) > -1 && starsNumber.indexOf(hotel.stars) > -1);
+    const limitStars: number = Math.max.apply(Math, starsNumber);
 
-    return filteredList;
+    return this.httpClient.get(`${this.hotelUrl}/hotels/${query}&${limitStars}`)
+      .toPromise()
+      .then(response => response as Hotel[])
+      .catch(() => {
+      });
   }
 }

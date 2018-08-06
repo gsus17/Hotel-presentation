@@ -22,8 +22,6 @@ export class HotelCardComponent implements OnInit {
   @Output() selectHotelEmitter = new EventEmitter<Hotel>();
 
   constructor() {
-    console.log(`${HotelCardComponent.name}::ctrl`);
-
   }
 
   ngOnInit() {
